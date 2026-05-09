@@ -1,0 +1,68 @@
+.faq {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: var(--surface-2);
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+@media (max-width: 800px) { .faq-grid { grid-template-columns: 1fr; } }
+
+.faq-head h2 {
+  font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.03em; margin-top: 0.7rem;
+}
+.faq-head h2 em { font-style: normal; font-weight: 600; color: var(--primary-ink); }
+.faq-head p { color: var(--ink-2); margin-top: 1rem; max-width: 36ch; }
+.faq-head a { color: var(--primary-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+
+.faq-list { display: flex; flex-direction: column; }
+.faq-item {
+  border-top: 1px solid var(--hairline-strong);
+  padding: 1.1rem 0;
+}
+.faq-item:last-child { border-bottom: 1px solid var(--hairline-strong); }
+
+.faq-q {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  background: transparent; border: 0;
+  text-align: left;
+  padding: 0.4rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.faq-q .ico {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--hairline-strong);
+  background: var(--surface);
+  display: grid; place-items: center;
+  font-size: 1rem; color: var(--ink); font-weight: 400;
+  transition: transform 0.25s ease, background 0.25s, color 0.25s;
+}
+.faq-item.is-open .faq-q .ico {
+  transform: rotate(45deg);
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.3s ease;
+  opacity: 0;
+}
+.faq-item.is-open .faq-a {
+  max-height: 240px;
+  opacity: 1;
+  padding-top: 0.6rem;
+}
+.faq-a p { color: var(--ink-2); font-size: 0.97rem; max-width: 60ch; }
