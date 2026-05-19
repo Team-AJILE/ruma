@@ -11,6 +11,8 @@ import Waitlist from "./components/Waitlist";
 import Footer from "./components/Footer";
 
 const SHOW_TRUST_STRIP = false;
+const SHOW_METRICS = false;
+const SHOW_TESTIMONIALS = false;
 
 function App() {
   return (
@@ -20,8 +22,8 @@ function App() {
       <Features />
       <Walkthrough />
       <HowItWorks />
-      <Metrics />
-      <Testimonials />
+      {SHOW_METRICS && <Metrics />}
+      {SHOW_TESTIMONIALS && <Testimonials />}
       <Pricing />
       <FAQ />
       <Waitlist />

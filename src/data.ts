@@ -1,8 +1,3 @@
-import box from "./assets/box.png";
-import sensitivity from "./assets/sensitivity.png";
-import compare from "./assets/compare.png";
-import calculator from "./assets/calculator.png";
-
 export type ReasonIcon = "box" | "sensitivity" | "compare" | "calculator" | "auction" | "pdf";
 
 export interface Reason {
@@ -43,14 +38,6 @@ export interface NavLink {
   label: string;
   href: string;
 }
-
-// "auction" and "pdf" icons are rendered as inline SVG in Features.tsx (no asset src).
-export const reasonIconSrc: Record<Exclude<ReasonIcon, "auction" | "pdf">, string> = {
-  box,
-  sensitivity,
-  compare,
-  calculator,
-};
 
 export const reasons: Reason[] = [
   {
@@ -128,13 +115,13 @@ export const pricingTiers: PricingTier[] = [
   {
     name: "Starter",
     price: "Free",
-    cadence: "forever",
+    cadence: "",
     desc: "For first-time investors evaluating one property at a time.",
     features: [
-      "1 active scenario",
-      "Cost stack & basic ROI",
+      "Save up to 5 properties",
       "Loan calculator",
-      "PDF export with watermark",
+      "Compare properties side by side",
+      "Base mortgage, legal, and stamp-duty calculators",
     ],
     cta: "Join the waitlist",
     primary: false,
@@ -145,12 +132,12 @@ export const pricingTiers: PricingTier[] = [
     cadence: "/ month",
     desc: "For active investors and agents running multiple deals at once.",
     features: [
-      "Unlimited scenarios",
-      "Scenario Lab & Comparison",
-      "Auction Lab",
-      "Loan calculator",
-      "Branded share-ready exports",
-      "Email support within 24h",
+      "Everything in Starter",
+      "Save unlimited properties",
+      "Scenario Lab — build and export scenarios",
+      "Auction Lab — bid analysis with PDF export",
+      "Import from Listing — auto-fill from text or screenshots",
+      "Early access to new calculators",
     ],
     cta: "Join the waitlist",
     primary: true,
@@ -160,7 +147,7 @@ export const pricingTiers: PricingTier[] = [
 export const faqs: Faq[] = [
   {
     q: "Is Ruma only for Malaysian properties?",
-    a: "We're starting with Malaysia because the local fee stack — stamp duty, MOT, legal, valuation — is genuinely tricky and underserved by global tools. Other markets are on the roadmap once the Malaysian experience is rock-solid.",
+    a: "We're starting with Malaysia because the local fee stack (stamp duty, MOT, legal, valuation) is genuinely tricky and underserved by global tools. Other markets are on the roadmap once the Malaysian experience is rock-solid.",
   },
   {
     q: "Do I need to be a finance person to use it?",
@@ -168,15 +155,15 @@ export const faqs: Faq[] = [
   },
   {
     q: "How is this different from a spreadsheet?",
-    a: "Spreadsheets are flexible but brittle. Ruma is a workflow: changes ripple through cashflow, repayment, and risk views automatically, and you can compare entire scenarios — not just cells — side by side.",
+    a: "Spreadsheets are flexible but brittle. Ruma is a workflow: changes ripple through cashflow, repayment, and risk views automatically, and you can compare entire scenarios, not just cells, side by side.",
   },
   {
     q: "When does Ruma launch?",
-    a: "We're polishing final workflows with a small group of investors and agents. Waitlist signups get the first invites in waves.",
+    a: "We're targeting a public launch in summer 2026. Waitlist signups get the first invites in waves.",
   },
   {
     q: "Who's behind Ruma?",
-    a: "Team AJILE — a small group of investors, engineers, and designers. Reach us anytime at inbox@ajile.team.",
+    a: "Team AJILE, a small group of investors, engineers, and designers. Reach us anytime at inbox@ajile.team.",
   },
 ];
 

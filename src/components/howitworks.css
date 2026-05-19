@@ -54,3 +54,7 @@
   color: var(--ink);
 }
 .hiw-step p { color: var(--ink-2); font-size: 0.97rem; }
+
+@media (max-width: 800px) {
+  .hiw-step { min-height: 0; padding: 1.25rem 1.25rem 1.2rem; gap: 0.6rem; }
+}
