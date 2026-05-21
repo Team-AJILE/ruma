@@ -1,0 +1,77 @@
+.pricing { padding: clamp(4rem, 8vw, 7rem) 0; }
+.pricing-head { max-width: 720px; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.pricing-head h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.03em; margin-top: 0.7rem; }
+.pricing-head h2 em { font-style: normal; font-weight: 600; color: var(--primary-ink); }
+.pricing-head p { color: var(--ink-2); margin-top: 0.7rem; max-width: 56ch; }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+@media (max-width: 700px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+.tier {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem 1.6rem;
+  display: flex; flex-direction: column; gap: 1.1rem;
+}
+.tier.is-primary {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  box-shadow: var(--shadow-lg);
+}
+.tier.is-primary h4, .tier.is-primary .tier-price, .tier.is-primary .tier-features li { color: var(--bg); }
+.tier.is-primary .tier-desc, .tier.is-primary .tier-cadence { color: rgba(255,255,255,0.65); }
+.tier.is-primary .tier-features li::before { background: var(--primary); }
+
+.tier-badge {
+  position: absolute; top: -12px; right: 14px;
+  background: var(--primary); color: var(--primary-ink);
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+  padding: 0.35rem 0.7rem; border-radius: 999px;
+  border: 1px solid color-mix(in oklch, var(--primary) 70%, black);
+}
+
+.tier h4 {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+}
+.tier-price {
+  font-weight: 700;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+}
+.tier-price .tier-cadence {
+  font-size: 0.95rem;
+  color: var(--ink-3);
+  margin-left: 0.4rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.tier-desc { color: var(--ink-2); font-size: 0.95rem; }
+.tier-features { display: flex; flex-direction: column; gap: 0.55rem; }
+.tier-features li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 0.92rem;
+  color: var(--ink-2);
+}
+.tier-features li::before {
+  content: "";
+  position: absolute; left: 0; top: 0.55rem;
+  width: 14px; height: 2px; border-radius: 2px;
+  background: var(--primary);
+}
+.tier .r-btn { margin-top: auto; align-self: stretch; }
+.tier.is-primary .r-btn { background: var(--primary); color: var(--primary-ink); border: 0; }
+.tier:not(.is-primary) .r-btn { background: var(--ink); color: var(--bg); }
