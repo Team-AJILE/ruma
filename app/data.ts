@@ -128,7 +128,7 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: "Pro",
-    price: "RM 39",
+    price: "RM 27.99",
     cadence: "/ month",
     desc: "For active investors and agents running multiple deals at once.",
     features: [
