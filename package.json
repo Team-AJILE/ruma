@@ -4,21 +4,27 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "react-router dev",
+    "build": "react-router build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
+    "@cloudflare/workers-types": "^4.20260524.1",
+    "@react-router/cloudflare": "^7.15.1",
+    "@react-router/dev": "^7.15.1",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router": "^7.15.1",
+    "vite-tsconfig-paths": "^6.1.1",
+    "wrangler": "^4.94.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react": "^5.0.4",
     "baseline-browser-mapping": "^2.10.32",
     "eslint": "^9.36.0",
     "eslint-plugin-react-hooks": "^5.2.0",
