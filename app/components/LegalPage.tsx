@@ -2,6 +2,7 @@ import { useState, type ReactNode } from "react";
 import { Link } from "react-router";
 import Footer from "./Footer";
 import { LANG_COOKIE, langCookieAttributes, type Lang } from "../lib/lang-cookie";
+import logo from "../assets/logo.png";
 import "./legal.css";
 
 interface LegalPageProps {
@@ -25,7 +26,9 @@ const LegalPage = ({ initialLang = "en", title, lastUpdated, content }: LegalPag
     <div className="legal-page">
       <header className="legal-header">
         <div className="r-container legal-header-inner">
-          <Link to="/" className="legal-brand">Ruma</Link>
+          <Link to="/" className="legal-brand" aria-label="Ruma">
+            <img src={logo} alt="Ruma" className="legal-brand-img" />
+          </Link>
           <div style={{ display: "flex", gap: "1.25rem", alignItems: "center" }}>
             <Link to="/" className="legal-back">← Back to home</Link>
             <div className="lang-toggle" role="group" aria-label="Language">

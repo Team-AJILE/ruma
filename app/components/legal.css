@@ -20,10 +20,20 @@
   flex-wrap: wrap;
 }
 .legal-brand {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--ink);
-  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+}
+.legal-brand-img {
+  height: 192px;
+  width: auto;
+  display: block;
+  margin: -74px 0;
+}
+@media (max-width: 720px) {
+  .legal-brand-img { height: 140px; margin: -48px 0; }
+}
+@media (max-width: 420px) {
+  .legal-brand-img { height: 112px; margin: -38px 0; }
 }
 .legal-back {
   font-size: 0.92rem;

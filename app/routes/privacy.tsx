@@ -124,11 +124,113 @@ const EnglishContent = () => (
 
 const BahasaContent = () => (
   <>
-    <div className="legal-placeholder">
-      [Terjemahan Bahasa Malaysia akan datang. Versi Bahasa Inggeris di atas adalah dokumen sah buat masa ini.]
+    <p style={{ fontStyle: "italic", fontSize: "0.88rem", color: "var(--ink-3)", marginBottom: "2rem" }}>
+      Nota: Versi Bahasa Inggeris dokumen ini adalah versi rasmi yang mengawal. Terjemahan Bahasa Malaysia ini disediakan untuk kemudahan rujukan; sekiranya terdapat sebarang percanggahan, versi Bahasa Inggeris akan terpakai.
+    </p>
+
+    <p>
+      AJILE STUDIO (No. Pendaftaran Syarikat 202503327530) (<strong>"AJILE"</strong>, <strong>"kami"</strong>) mengendalikan Ruma (ruma.casa) (<strong>"Perkhidmatan"</strong>). Dasar Privasi ini menerangkan cara kami mengumpul, menggunakan, menyimpan, dan melindungi data peribadi anda mengikut Akta Perlindungan Data Peribadi 2010 (<strong>"APDP"</strong>) Malaysia.
+    </p>
+    <p>Dengan menggunakan Perkhidmatan ini, anda bersetuju dengan amalan yang dinyatakan di bawah.</p>
+
+    <h2>1. Data peribadi yang kami kumpul</h2>
+    <div className="legal-table-wrap">
+      <table className="legal-table">
+        <thead>
+          <tr><th>Kategori</th><th>Contoh</th><th>Bila dikumpul</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data identiti dan hubungan</td>
+            <td>Nama, alamat e-mel</td>
+            <td>Apabila anda menyertai senarai tunggu atau menghubungi kami</td>
+          </tr>
+          <tr>
+            <td>Input kalkulator</td>
+            <td>Harga hartanah, jumlah pinjaman, pendapatan, andaian sewaan</td>
+            <td>Apabila anda menggunakan kalkulator (diproses dalam pelayar anda; tidak disimpan pada pelayan kami melainkan anda menyimpan senario secara nyata)</td>
+          </tr>
+          <tr>
+            <td>Data penggunaan dan peranti</td>
+            <td>Alamat IP, jenis pelayar, peranti, halaman yang dilihat, klik, perujuk</td>
+            <td>Secara automatik melalui analitik PostHog</td>
+          </tr>
+          <tr>
+            <td>Rakaman sesi</td>
+            <td>Rakaman interaksi anda dengan Perkhidmatan (pergerakan tetikus, klik, navigasi halaman). Medan input ditutup secara lalai bagi mengelakkan apa yang anda taipkan daripada dirakam.</td>
+            <td>Secara automatik melalui ciri rakaman sesi PostHog</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <p style={{ marginTop: "1.5rem" }}>
-      Placeholder — full Bahasa Malaysia translation pending. The English version is the authoritative document at this time.
+
+    <h2>2. Cara kami menggunakan data anda</h2>
+    <ul>
+      <li>Untuk mengendalikan, menyelenggara, dan menambah baik Perkhidmatan;</li>
+      <li>Untuk membalas pertanyaan dan menghantar kemas kini senarai tunggu atau pelancaran yang anda telah daftarkan;</li>
+      <li>Untuk menganalisis corak penggunaan dan mendiagnosis isu teknikal;</li>
+      <li>Untuk mematuhi kewajipan undang-undang di Malaysia.</li>
+    </ul>
+
+    <h2>3. Pendedahan kepada pihak ketiga</h2>
+    <p>Kami <strong>tidak</strong> menjual data peribadi anda. Kami mendedahkan data hanya kepada:</p>
+    <ul>
+      <li><strong>Pembekal perkhidmatan</strong> yang membantu kami mengendalikan Perkhidmatan (cth. PostHog untuk analitik dan rakaman sesi, pembekal e-mel dan pengehosan kami), yang terikat dengan kewajipan kerahsiaan dan perlindungan data;</li>
+      <li><strong>Pihak penguatkuasaan undang-undang atau pengawal selia</strong> apabila dikehendaki oleh undang-undang Malaysia.</li>
+    </ul>
+    <p>
+      <strong>Rakan kongsi pemasaran ikut-serta pada masa hadapan.</strong> Kami mungkin, pada masa hadapan, menawarkan anda pilihan untuk berkongsi nama dan alamat e-mel anda dengan agensi hartanah dan pemaju hartanah yang terpilih bagi tujuan pemasaran langsung dan jualan hartanah. Perkongsian ini <strong>hanya akan berlaku sekiranya anda memberikan persetujuan ikut-serta yang berasingan dan jelas</strong> pada masa pilihan tersebut ditawarkan. Anda boleh menarik balik persetujuan pada bila-bila masa.
+    </p>
+
+    <h2>4. Pemindahan rentas sempadan</h2>
+    <p>
+      Sebahagian daripada pembekal perkhidmatan kami (termasuk PostHog) memproses data pada pelayan yang terletak di luar Malaysia. Kami bergantung kepada aku janji kontrak penerima dan perlindungan yang diiktiraf bagi memastikan tahap perlindungan yang setanding dengan APDP, seperti yang dibenarkan di bawah Seksyen 129 APDP.
+    </p>
+
+    <h2>5. Pengekalan</h2>
+    <p>
+      Kami mengekalkan data peribadi hanya selama yang diperlukan untuk memenuhi tujuan yang dinyatakan di atas, atau seperti yang dikehendaki oleh undang-undang Malaysia. Data senarai tunggu disimpan sehingga anda berhenti melanggan atau meminta pemadaman. Data analitik dan rakaman sesi disimpan sehingga <strong>12 bulan</strong> dari tarikh pengumpulan, selepas itu data tersebut akan dipadamkan atau dianonimkan.
+    </p>
+
+    <h2>6. Keselamatan</h2>
+    <p>
+      Kami menggunakan langkah teknikal dan organisasi yang munasabah (penyulitan semasa transit, kawalan akses, usaha wajar vendor) bagi melindungi data peribadi daripada akses, kehilangan, atau pendedahan tanpa kebenaran.
+    </p>
+
+    <h2>7. Hak anda di bawah APDP</h2>
+    <p>Anda mempunyai hak untuk:</p>
+    <ul>
+      <li>mengakses dan mendapatkan salinan data peribadi anda;</li>
+      <li>membetulkan data yang tidak tepat atau tidak lengkap;</li>
+      <li>menarik balik persetujuan terhadap pemprosesan (yang mungkin menjejaskan keupayaan kami untuk menyediakan Perkhidmatan);</li>
+      <li>memohon pemadaman data anda, tertakluk kepada keperluan pengekalan undang-undang;</li>
+      <li>menghadkan pemprosesan data anda untuk pemasaran langsung.</li>
+    </ul>
+    <p>Untuk melaksanakan mana-mana hak ini, sila e-melkan <a href="mailto:inbox@ajile.team">inbox@ajile.team</a>.</p>
+
+    <h2>8. Kuki dan penjejakan</h2>
+    <p>
+      Perkhidmatan ini menggunakan kuki dan teknologi serupa (melalui PostHog) untuk analitik dan mengingati pilihan anda. Anda boleh melumpuhkan kuki melalui tetapan pelayar anda; sesetengah ciri mungkin tidak berfungsi dengan betul akibat tindakan tersebut.
+    </p>
+
+    <h2>9. Kanak-kanak</h2>
+    <p>
+      Perkhidmatan ini tidak ditujukan kepada individu di bawah umur 18 tahun. Kami tidak mengumpul data peribadi daripada kanak-kanak dengan sengaja.
+    </p>
+
+    <h2>10. Perubahan</h2>
+    <p>
+      Kami mungkin mengemas kini Dasar ini dari semasa ke semasa. Tarikh "Kemas kini terakhir" di atas mencerminkan semakan terkini. Perubahan material akan diketengahkan pada Perkhidmatan.
+    </p>
+
+    <h2>11. Hubungi</h2>
+    <p>
+      AJILE STUDIO (202503327530)<br />
+      E-mel: <a href="mailto:inbox@ajile.team">inbox@ajile.team</a>
+    </p>
+
+    <p style={{ marginTop: "2rem" }}>
+      Lihat juga: <Link to="/terms">Terma Perkhidmatan</Link> · <Link to="/disclaimer">Penafian</Link>
     </p>
   </>
 );

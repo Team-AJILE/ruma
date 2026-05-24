@@ -39,7 +39,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-credit">
-        <span>© {year} AJILE STUDIO</span>
+        <span>© {year} AJILE STUDIO (Reg. No. 202503327530)</span>
       </div>
     </footer>
   );

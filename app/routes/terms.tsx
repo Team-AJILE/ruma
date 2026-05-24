@@ -112,11 +112,101 @@ const EnglishContent = () => (
 
 const BahasaContent = () => (
   <>
-    <div className="legal-placeholder">
-      [Terjemahan Bahasa Malaysia akan datang. Versi Bahasa Inggeris di atas adalah dokumen sah buat masa ini.]
-    </div>
-    <p style={{ marginTop: "1.5rem" }}>
-      Placeholder — full Bahasa Malaysia translation pending. The English version is the authoritative document at this time.
+    <p style={{ fontStyle: "italic", fontSize: "0.88rem", color: "var(--ink-3)", marginBottom: "2rem" }}>
+      Nota: Versi Bahasa Inggeris dokumen ini adalah versi rasmi yang mengawal. Terjemahan Bahasa Malaysia ini disediakan untuk kemudahan rujukan; sekiranya terdapat sebarang percanggahan, versi Bahasa Inggeris akan terpakai.
+    </p>
+
+    <p>
+      Terma ini mengawal penggunaan Ruma (ruma.casa) oleh anda (<strong>"Perkhidmatan"</strong>), yang dikendalikan oleh AJILE STUDIO (No. Pendaftaran Syarikat 202503327530) (<strong>"AJILE"</strong>, <strong>"kami"</strong>). Dengan mengakses atau menggunakan Perkhidmatan, anda bersetuju dengan Terma ini. Jika anda tidak bersetuju, sila jangan gunakan Perkhidmatan ini.
+    </p>
+
+    <h2>1. Perkhidmatan</h2>
+    <p>
+      Ruma ialah satu set kalkulator pelaburan hartanah dan alat perbandingan yang direka untuk pasaran hartanah Malaysia. Perkhidmatan ini disediakan untuk <strong>tujuan maklumat dan pendidikan sahaja</strong>.
+    </p>
+
+    <h2>2. Kelayakan</h2>
+    <p>
+      Anda mestilah berumur sekurang-kurangnya 18 tahun dan mampu memeterai kontrak yang mengikat di bawah Akta Kontrak 1950 Malaysia bagi menggunakan Perkhidmatan ini.
+    </p>
+
+    <h2>3. Penggunaan yang dibenarkan</h2>
+    <p>Anda bersetuju untuk <strong>tidak</strong>:</p>
+    <ul>
+      <li>menggunakan Perkhidmatan untuk sebarang tujuan yang menyalahi undang-undang atau yang melanggar mana-mana undang-undang Malaysia;</li>
+      <li>melakukan kejuruteraan terbalik, dekompilasi, mengikis (scraping), atau cuba mengekstrak kod sumber atau data asas Perkhidmatan, kecuali setakat yang dibenarkan oleh undang-undang;</li>
+      <li>mengganggu, menjejaskan, atau mengenakan beban yang tidak munasabah ke atas Perkhidmatan atau infrastrukturnya;</li>
+      <li>menggunakan kaedah automatik (bot, perangkak) bagi mengakses Perkhidmatan tanpa persetujuan bertulis kami terlebih dahulu;</li>
+      <li>memuat naik atau menghantar perisian hasad, kod berbahaya, atau maklumat yang mengelirukan;</li>
+      <li>menyamar sebagai mana-mana orang atau entiti, atau memberikan keterangan palsu tentang gabungan anda;</li>
+      <li>menggunakan Perkhidmatan untuk memberikan nasihat kewangan, pelaburan, atau undang-undang yang dikawal selia kepada pihak ketiga.</li>
+    </ul>
+    <p>Kami boleh menggantung atau menamatkan akses anda pada bila-bila masa atas sebab pelanggaran Terma ini.</p>
+
+    <h2>4. Harta intelek</h2>
+    <p>
+      Semua kandungan, perisian, reka bentuk, kalkulator, metodologi, cap dagangan, dan penjenamaan pada Perkhidmatan adalah dimiliki oleh AJILE STUDIO atau pemberi lesennya, dan dilindungi oleh undang-undang hak cipta, cap dagangan, serta undang-undang harta intelek Malaysia yang lain.
+    </p>
+    <p>
+      Anda diberikan lesen yang terhad, tidak eksklusif, tidak boleh dipindah milik, dan boleh dibatalkan, untuk mengakses dan menggunakan Perkhidmatan bagi kegunaan peribadi bukan komersial. Output yang anda hasilkan daripada kalkulator menggunakan input anda sendiri (cth. laporan PDF yang dieksport) boleh digunakan untuk tujuan peribadi atau perniagaan dalaman anda sendiri; anda tidak boleh menjual semula atau mengedar semula Perkhidmatan atau komponen asasnya.
+    </p>
+
+    <h2>5. Akaun dan senarai tunggu</h2>
+    <p>
+      Maklumat yang anda kemukakan (cth. melalui senarai tunggu) mestilah tepat. Anda bertanggungjawab terhadap sebarang aktiviti di bawah akaun anda, jika akaun dicipta.
+    </p>
+
+    <h2>6. Yuran</h2>
+    <p>
+      Peringkat percuma disediakan seperti yang diterangkan pada Perkhidmatan. Pelan berbayar, jika dan apabila dilancarkan, akan tertakluk kepada terma harga dan pembayaran yang dipaparkan pada masa pembelian.
+    </p>
+
+    <h2>7. Penafian jaminan</h2>
+    <p>
+      Perkhidmatan ini disediakan <strong>"sebagaimana adanya" dan "sebagaimana tersedia"</strong>, tanpa apa-apa jaminan, sama ada nyata atau tersirat, setakat maksimum yang dibenarkan oleh undang-undang Malaysia. Kami tidak menjamin bahawa Perkhidmatan akan beroperasi tanpa gangguan, bebas ralat, atau bahawa output kalkulator adalah tepat atau sesuai untuk apa-apa tujuan tertentu. Sila rujuk <Link to="/disclaimer">Penafian</Link> kami untuk butiran lanjut.
+    </p>
+
+    <h2>8. Had liabiliti</h2>
+    <p>
+      Setakat maksimum yang dibenarkan di bawah undang-undang Malaysia, AJILE STUDIO, pengarah, pekerja, dan sekutunya tidak akan menanggung liabiliti bagi sebarang ganti rugi tidak langsung, sampingan, khas, berbangkit, atau teladan, atau sebarang kehilangan keuntungan, hasil, data, atau peluang perniagaan, yang timbul daripada atau berkaitan dengan penggunaan Perkhidmatan oleh anda. Jumlah liabiliti agregat kami tidak akan melebihi jumlah (jika ada) yang anda telah bayar kepada kami dalam tempoh 12 bulan sebelum peristiwa yang menimbulkan tuntutan, atau <strong>RM 100</strong>, mengikut yang lebih rendah.
+    </p>
+    <p>
+      Tiada apa-apa dalam Terma ini mengecualikan liabiliti yang tidak boleh dikecualikan secara sah di bawah undang-undang Malaysia (termasuk di bawah Akta Perlindungan Pengguna 1999, di mana berkenaan).
+    </p>
+
+    <h2>9. Tanggung rugi</h2>
+    <p>
+      Anda bersetuju untuk menanggung rugi dan melindungi AJILE STUDIO daripada sebarang tuntutan, kerugian, atau perbelanjaan yang timbul daripada pelanggaran Terma ini oleh anda atau penyalahgunaan Perkhidmatan oleh anda.
+    </p>
+
+    <h2>10. Pautan pihak ketiga</h2>
+    <p>
+      Perkhidmatan ini mungkin memautkan kepada laman web pihak ketiga. Kami tidak bertanggungjawab terhadap kandungan atau amalan mereka.
+    </p>
+
+    <h2>11. Penamatan</h2>
+    <p>
+      Kami boleh mengubah suai, menggantung, atau menghentikan Perkhidmatan (atau mana-mana bahagiannya) pada bila-bila masa. Terma ini kekal berkuat kuasa sehingga ditamatkan.
+    </p>
+
+    <h2>12. Undang-undang yang mengawal dan bidang kuasa</h2>
+    <p>
+      Terma ini hendaklah dikawal oleh dan ditafsirkan mengikut <strong>undang-undang Malaysia</strong>. Sebarang pertikaian yang timbul daripada atau berkaitan dengan Terma ini atau Perkhidmatan hendaklah dikemukakan kepada <strong>bidang kuasa eksklusif mahkamah Malaysia</strong>.
+    </p>
+
+    <h2>13. Perubahan</h2>
+    <p>
+      Kami mungkin mengemas kini Terma ini dari semasa ke semasa. Penggunaan berterusan terhadap Perkhidmatan selepas perubahan berkuat kuasa merupakan penerimaan terhadap perubahan tersebut.
+    </p>
+
+    <h2>14. Hubungi</h2>
+    <p>
+      AJILE STUDIO (202503327530)<br />
+      E-mel: <a href="mailto:inbox@ajile.team">inbox@ajile.team</a>
+    </p>
+
+    <p style={{ marginTop: "2rem" }}>
+      Lihat juga: <Link to="/privacy">Dasar Privasi</Link> · <Link to="/disclaimer">Penafian</Link>
     </p>
   </>
 );

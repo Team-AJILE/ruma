@@ -14,7 +14,16 @@
       "PowerShell($path = \"C:\\\\Users\\\\adria\\\\OneDrive\\\\Desktop\\\\Github repos\\\\ruma\\\\build\"; attrib -r -s -h \"$path\" /S /D 2>&1 | Out-Null; cmd /c \"rmdir /s /q `\"$path`\"\" 2>&1 | Out-Null; if \\(Test-Path $path\\) { Write-Output \"still exists\" } else { Write-Output \"removed\" })",
       "Bash(curl -s http://localhost:5175/privacy)",
       "Bash(curl -s -b \"ruma_legal_lang=bm\" http://localhost:5175/privacy)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5175/)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5175/)",
+      "PowerShell(Get-Process | Where-Object { $_.ProcessName -in @\\('node','wrangler','workerd','vite'\\) } | Select-Object Id, ProcessName, StartTime | Format-Table -AutoSize; Write-Output \"---\"; Write-Output \"OneDrive status:\"; Get-Process OneDrive -ErrorAction SilentlyContinue | Select-Object Id, ProcessName | Format-Table -AutoSize)",
+      "PowerShell(Get-Process | Where-Object { $_.ProcessName -in @\\('node','workerd','wrangler'\\) } | Stop-Process -Force; Start-Sleep -Milliseconds 500; Get-Process | Where-Object { $_.ProcessName -in @\\('node','workerd','wrangler'\\) } | Select-Object Id, ProcessName | Format-Table -AutoSize; Write-Output \"remaining processes \\(empty = all killed\\)\")",
+      "Bash(curl -s -b \"ruma_legal_lang=bm\" http://localhost:5173/privacy)",
+      "Bash(curl -s -b \"ruma_legal_lang=bm\" http://localhost:5173/terms)",
+      "Bash(curl -s -b \"ruma_legal_lang=bm\" http://localhost:5173/disclaimer)",
+      "PowerShell(Get-Process | Where-Object { $_.ProcessName -in @\\('node','workerd','wrangler'\\) } | Stop-Process -Force; Write-Output \"killed dev processes\")",
+      "Bash(curl -s http://localhost:5174/)",
+      "Bash(curl -s http://localhost:5174/terms)",
+      "Bash(curl -s http://localhost:5174/disclaimer)"
     ]
   }
 }

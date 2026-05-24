@@ -62,11 +62,51 @@ const EnglishContent = () => (
 
 const BahasaContent = () => (
   <>
-    <div className="legal-placeholder">
-      [Terjemahan Bahasa Malaysia akan datang. Versi Bahasa Inggeris di atas adalah dokumen sah buat masa ini.]
-    </div>
-    <p style={{ marginTop: "1.5rem" }}>
-      Placeholder — full Bahasa Malaysia translation pending. The English version is the authoritative document at this time.
+    <p style={{ fontStyle: "italic", fontSize: "0.88rem", color: "var(--ink-3)", marginBottom: "2rem" }}>
+      Nota: Versi Bahasa Inggeris dokumen ini adalah versi rasmi yang mengawal. Terjemahan Bahasa Malaysia ini disediakan untuk kemudahan rujukan; sekiranya terdapat sebarang percanggahan, versi Bahasa Inggeris akan terpakai.
+    </p>
+
+    <h2>1. Bukan nasihat kewangan, pelaburan, cukai, atau undang-undang</h2>
+    <p>
+      Ruma (ruma.casa), yang dikendalikan oleh AJILE STUDIO (No. Pendaftaran Syarikat 202503327530), menyediakan kalkulator pelaburan hartanah dan alat analitik untuk <strong>tujuan maklumat dan pendidikan sahaja</strong>.
+    </p>
+    <p>
+      Tiada apa-apa pun pada Perkhidmatan — termasuk output kalkulator, laporan yang dieksport, artikel, atau apa-apa kandungan lain — yang merupakan nasihat kewangan, pelaburan, cukai, undang-undang, atau profesional, mahupun saranan untuk membeli, menjual, membiayai, atau bertransaksi dalam mana-mana hartanah, sekuriti, atau produk kewangan. AJILE STUDIO <strong>bukan</strong> penasihat kewangan berlesen, penilai, perunding hartanah berdaftar, atau ejen cukai di bawah undang-undang Malaysia, dan Perkhidmatan ini tidak dikawal selia oleh Suruhanjaya Sekuriti Malaysia, Bank Negara Malaysia, atau Lembaga Penilai, Pentaksir, Ejen Harta Tanah dan Pengurus Harta.
+    </p>
+    <p>
+      Sebelum membuat sebarang keputusan hartanah, pembiayaan, atau pelaburan, anda hendaklah berunding dengan profesional berlesen yang sesuai (cth. perunding hartanah berdaftar, penilai, pengamal bank, ejen cukai, atau peguam) yang boleh mengambil kira keadaan individu anda.
+    </p>
+
+    <h2>2. Ketepatan maklumat</h2>
+    <p>
+      Keputusan kalkulator adalah anggaran berdasarkan input yang anda berikan dan berdasarkan andaian, formula, kadar lalai, dan angka statutori (cth. jadual duti setem) yang mungkin berubah tanpa notis dan mungkin tidak mencerminkan kedudukan terkini di bawah undang-undang Malaysia.
+    </p>
+    <p>
+      Walaupun kami mengambil langkah berjaga-jaga yang munasabah, kami <strong>tidak membuat representasi atau jaminan</strong> mengenai ketepatan, kelengkapan, ketepatan masa, atau kebolehpercayaan mana-mana maklumat, pengiraan, atau output yang dihasilkan oleh Perkhidmatan. Hasil sebenar — termasuk kelayakan pinjaman, faedah, yuran, cukai, hasil sewaan, dan pertumbuhan modal — mungkin berbeza secara material daripada sebarang anggaran yang dihasilkan oleh Perkhidmatan.
+    </p>
+
+    <h2>3. Had liabiliti</h2>
+    <p>
+      Setakat maksimum yang dibenarkan di bawah undang-undang Malaysia, AJILE STUDIO, pengarah, pekerja, dan sekutunya <strong>tidak akan menanggung liabiliti</strong> bagi sebarang kerugian atau ganti rugi langsung, tidak langsung, sampingan, khas, berbangkit, atau teladan (termasuk kehilangan keuntungan, simpanan, peluang, atau data) yang timbul daripada, atau dalam apa cara berkaitan dengan, penggunaan anda terhadap, atau kebergantungan anda kepada, Perkhidmatan atau sebarang kandungan yang dihasilkan olehnya.
+    </p>
+    <p>
+      Anda menanggung <strong>tanggungjawab sepenuhnya</strong> bagi sebarang keputusan yang dibuat, atau tindakan yang diambil, berdasarkan Perkhidmatan.
+    </p>
+
+    <h2>4. Kandungan pihak ketiga</h2>
+    <p>
+      Perkhidmatan ini mungkin merujuk atau memautkan kepada data, laman web, atau perkhidmatan pihak ketiga. AJILE STUDIO tidak mengesahkan dan tidak bertanggungjawab terhadap sebarang kandungan pihak ketiga.
+    </p>
+
+    <h2>5. Undang-undang yang mengawal</h2>
+    <p>
+      Penafian ini dikawal oleh undang-undang Malaysia dan hendaklah dibaca bersama <Link to="/terms">Terma Perkhidmatan</Link> dan <Link to="/privacy">Dasar Privasi</Link> kami.
+    </p>
+
+    <h2>6. Hubungi</h2>
+    <p>
+      AJILE STUDIO (202503327530)<br />
+      E-mel: <a href="mailto:inbox@ajile.team">inbox@ajile.team</a>
     </p>
   </>
 );
