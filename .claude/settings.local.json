@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5174/privacy)",
+      "PowerShell(try { Rename-Item -Path \"build\" -NewName \\(\"build-old-\" + [int][double]::Parse\\(\\(Get-Date -UFormat %s\\)\\)\\) -ErrorAction Stop; Write-Output \"renamed\" } catch { Write-Output \\(\"failed: \" + $_.Exception.Message\\) })",
+      "PowerShell($buildPath = \"C:\\\\Users\\\\adria\\\\OneDrive\\\\Desktop\\\\Github repos\\\\ruma\\\\build\"; if \\(Test-Path $buildPath\\) { \\(Get-Item $buildPath -Force\\).Attributes; Get-ChildItem $buildPath -Recurse -Force | Select-Object -First 5 FullName, Attributes | Format-Table -AutoSize })",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\adria\\\\OneDrive\\\\Desktop\\\\Github repos\\\\ruma\\\\build\\\\client\" -Force -ErrorAction SilentlyContinue | Select-Object Name, Attributes | Format-Table -AutoSize; Write-Output \"---\"; Get-Process | Where-Object { $_.ProcessName -in @\\('OneDrive','MsMpEng','SearchProtocolHost','SearchIndexer','explorer'\\) } | Select-Object Id, ProcessName | Format-Table -AutoSize)",
+      "Bash(cmd.exe /c \"rmdir /s /q build\")",
+      "Bash(echo \"exit=$?\")",
+      "Bash(cmd.exe /c \"rmdir /q build\\\\client && rmdir /q build\")",
+      "Bash(break)",
+      "PowerShell($path = \"C:\\\\Users\\\\adria\\\\OneDrive\\\\Desktop\\\\Github repos\\\\ruma\\\\build\"; attrib -r -s -h \"$path\" /S /D 2>&1 | Out-Null; cmd /c \"rmdir /s /q `\"$path`\"\" 2>&1 | Out-Null; if \\(Test-Path $path\\) { Write-Output \"still exists\" } else { Write-Output \"removed\" })",
+      "Bash(curl -s http://localhost:5175/privacy)",
+      "Bash(curl -s -b \"ruma_legal_lang=bm\" http://localhost:5175/privacy)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5175/)"
+    ]
+  }
+}

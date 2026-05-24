@@ -81,7 +81,7 @@ export const steps: Step[] = [
   {
     n: "02",
     title: "Tune your assumptions",
-    desc: "Adjust rent, vacancy, growth, and loan mix with sliders. Every panel — cashflow, ROI, repayment — updates live.",
+    desc: "Adjust rent, vacancy, growth, and loan mix with sliders. Every panel — cashflow, IRR, repayment — updates live.",
   },
   {
     n: "03",
@@ -151,19 +151,19 @@ export const faqs: Faq[] = [
   },
   {
     q: "Do I need to be a finance person to use it?",
-    a: "No. Ruma ships sensible defaults for every assumption. If you want to go deeper, every number is editable and every formula is documented in plain English.",
+    a: "Not at all. Ruma is designed to be intuitive for first-timers while still powerful for seasoned investors. The calculators and scenario lab do the heavy lifting, so you can focus on making informed decisions without getting lost in the weeds.",
   },
   {
     q: "How is this different from a spreadsheet?",
-    a: "Spreadsheets are flexible but brittle. Ruma is a workflow: changes ripple through cashflow, repayment, and risk views automatically, and you can compare entire scenarios, not just cells, side by side.",
+    a: "Spreadsheets are flexible but brittle. Ruma is a workflow: changes ripple through cashflow, repayment, and risk views automatically, and you can compare & visualize entire scenarios, not just cells, side by side.",
   },
   {
     q: "When does Ruma launch?",
-    a: "We're targeting a public launch in summer 2026. Waitlist signups get the first invites in waves.",
+    a: "We're targeting a public launch in July 2026. Early access signups get the first invites.",
   },
   {
     q: "Who's behind Ruma?",
-    a: "Team AJILE, a small group of investors, engineers, and designers. Reach us anytime at inbox@ajile.team.",
+    a: "AJILE Studios, a small team of developers based in Malaysia & USA. Reach us anytime at inbox@ajile.team.",
   },
 ];
 
