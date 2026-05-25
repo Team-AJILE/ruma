@@ -1,6 +1,6 @@
 import { createRequestHandler } from "react-router";
 const requestHandler = createRequestHandler(
-  () => import("./assets/server-build-DZTVckhW.js"),
+  () => import("./assets/server-build-BM2qnd-J.js"),
   "production"
 );
 const app = {

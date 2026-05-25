@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ruma.app/sitemap.xml
+Sitemap: https://ruma.casa/sitemap.xml
