@@ -168,8 +168,9 @@ export const faqs: Faq[] = [
 ];
 
 export const navLinks: NavLink[] = [
-  { label: "Why Ruma", href: "#features" },
-  { label: "Preview", href: "#walkthrough" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Why Ruma", href: "/#features" },
+  { label: "Preview", href: "/#walkthrough" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Waitlist", href: "/waitlist" },
 ];

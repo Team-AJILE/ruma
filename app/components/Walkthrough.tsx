@@ -39,15 +39,6 @@ const tabs: { id: Tab; label: string }[] = [
   { id: "cmp", label: "Compare" },
 ];
 
-const sideItems: { id: Tab | "_"; label: string }[] = [
-  { id: "props", label: "Properties" },
-  { id: "sens", label: "Scenario Lab" },
-  { id: "_", label: "Auction Lab" },
-  { id: "_", label: "Loan Calculator" },
-  { id: "cmp", label: "Comparison" },
-  { id: "_", label: "Account" },
-];
-
 const HomeIcon = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z" />
@@ -106,7 +97,6 @@ interface PropertyDetail {
   upfront: Array<{ label: string; value: string }>;
   total: string;
   kpis: Array<{ label: string; value: string; pos?: boolean }>;
-  chart: number[];
   note: { lead: string; body: string };
 }
 
@@ -128,7 +118,6 @@ const propertyDetails: Record<PropId, PropertyDetail> = {
       { label: "Monthly Cash Flow", value: "RM 285", pos: true },
       { label: "Cash-on-Cash", value: "4.2%", pos: true },
     ],
-    chart: [38, 42, 40, 46, 44, 50, 48, 52, 50, 56, 54, 60],
     note: {
       lead: "90% LTV residential loan.",
       body: "Modest cash flow, steady tenant profile. Stays positive even with −10% rent.",
@@ -151,7 +140,6 @@ const propertyDetails: Record<PropId, PropertyDetail> = {
       { label: "Monthly Cash Flow", value: "RM 1,240", pos: true },
       { label: "Cash-on-Cash", value: "5.8%", pos: true },
     ],
-    chart: [55, 68, 64, 78, 70, 84, 76, 88, 80, 92, 86, 95],
     note: {
       lead: "70% LTV commercial loan, higher MOT.",
       body: "Bigger upfront, stronger cash flow. Commercial rent premium covers the lower leverage.",
@@ -219,7 +207,6 @@ const Walkthrough = () => {
 
   const selectedCard = dashCards.find((c) => c.id === selectedId) ?? dashCards[0];
   const selectedDetail = propertyDetails[selectedId];
-  const chartPeak = Math.max(...selectedDetail.chart);
   const detailTrigger = `${tab}-${selectedId}`;
 
   const slug = selectedId === "sri" ? "sri-petaling-condo" : "mont-kiara-suite";
@@ -254,17 +241,6 @@ const Walkthrough = () => {
         </div>
 
         <div className="walk-app">
-          <aside className="walk-side">
-            <div className="walk-side-section">Ruma</div>
-            {sideItems.map((item, i) => (
-              <a
-                key={i}
-                className={item.id !== "_" && item.id === tab ? "is-active" : ""}
-              >
-                <span className="dot" />{item.label}
-              </a>
-            ))}
-          </aside>
 
           <div className="walk-main">
             {/* PROPERTIES */}
@@ -315,21 +291,6 @@ const Walkthrough = () => {
                       ))}
                     </div>
                   </div>
-                  <div className="walk-block">
-                    <div className="walk-detail-head">
-                      <h6>Cashflow · 12 mo</h6>
-                      <span className="walk-detail-sub">RM, net of mortgage</span>
-                    </div>
-                    <div className="walk-chart">
-                      {selectedDetail.chart.map((h, i) => (
-                        <div
-                          key={`${selectedId}-${i}`}
-                          className={"walk-chart-bar" + (h === chartPeak ? " is-peak" : "")}
-                          style={{ height: `${h}%` }}
-                        />
-                      ))}
-                    </div>
-                  </div>
                   <div className="walk-note">
                     <b>{selectedDetail.note.lead}</b> {selectedDetail.note.body}
                   </div>
@@ -341,77 +302,71 @@ const Walkthrough = () => {
             <div className={"walk-panel" + (tab === "sens" ? " is-active" : "")}>
               <div className="walk-crumbs-wrap">
                 <div className="walk-crumbs">Scenario Lab / <b>Sri Petaling Condo</b></div>
-                <span className="walk-deal-roi">IRR +3.4% – +14.8%</span>
+                <span className="walk-deal-roi">IRR +6.8% – +12.4%</span>
               </div>
               <div className="walk-panel-grid">
                 <div className="walk-block">
                   <h6>Scenario inputs</h6>
-                  <div className="walk-sens">
-                    <div className="walk-sens-row">
-                      <span>Rent expectation</span>
-                      <div className="walk-sens-range">
-                        <div className="walk-sens-track">
-                          <div className="walk-sens-fill" style={{ left: tab === "sens" ? "12%" : "50%", right: tab === "sens" ? "22%" : "50%" }} />
-                          <span className="walk-sens-handle" style={{ left: tab === "sens" ? "12%" : "50%" }} />
-                          <span className="walk-sens-handle" style={{ left: tab === "sens" ? "78%" : "50%" }} />
-                        </div>
-                      </div>
-                      <b>RM 2.4k–3.2k</b>
+                  <div className="walk-inputs">
+                    <div className="walk-input">
+                      <small>Rent low (monthly)</small>
+                      <div className="walk-input-box">RM 2,400</div>
                     </div>
-                    <div className="walk-sens-row">
-                      <span>Annual appreciation</span>
-                      <div className="walk-sens-range">
-                        <div className="walk-sens-track">
-                          <div className="walk-sens-fill" style={{ left: tab === "sens" ? "25%" : "50%", right: tab === "sens" ? "35%" : "50%" }} />
-                          <span className="walk-sens-handle" style={{ left: tab === "sens" ? "25%" : "50%" }} />
-                          <span className="walk-sens-handle" style={{ left: tab === "sens" ? "65%" : "50%" }} />
-                        </div>
-                      </div>
-                      <b>2.0–6.5%</b>
+                    <div className="walk-input">
+                      <small>Rent high (monthly)</small>
+                      <div className="walk-input-box">RM 3,200</div>
                     </div>
-                    <div className="walk-sens-row">
-                      <span>Holding period</span>
-                      <div className="walk-sens-range">
-                        <div className="walk-sens-track">
-                          <div className="walk-sens-fill" style={{ left: tab === "sens" ? "20%" : "50%", right: tab === "sens" ? "15%" : "50%" }} />
-                          <span className="walk-sens-handle" style={{ left: tab === "sens" ? "20%" : "50%" }} />
-                          <span className="walk-sens-handle" style={{ left: tab === "sens" ? "85%" : "50%" }} />
-                        </div>
-                      </div>
-                      <b>3–10 yrs</b>
+                    <div className="walk-input">
+                      <small>Occupancy rate (%)</small>
+                      <div className="walk-input-box">95</div>
                     </div>
-                    <div className="walk-sens-row">
-                      <span>Vacancy rate</span>
-                      <div className="walk-sens-range">
-                        <div className="walk-sens-track">
-                          <div className="walk-sens-fill" style={{ left: tab === "sens" ? "5%" : "50%", right: tab === "sens" ? "65%" : "50%" }} />
-                          <span className="walk-sens-handle" style={{ left: tab === "sens" ? "5%" : "50%" }} />
-                          <span className="walk-sens-handle" style={{ left: tab === "sens" ? "35%" : "50%" }} />
-                        </div>
-                      </div>
-                      <b>2–8%</b>
+                    <div className="walk-input">
+                      <small>Holding period (months)</small>
+                      <div className="walk-input-box">60</div>
+                    </div>
+                    <div className="walk-input">
+                      <small>Annual appreciation (%)</small>
+                      <div className="walk-input-box">3.5</div>
+                    </div>
+                    <div className="walk-input">
+                      <small>Rental appreciation (%)</small>
+                      <div className="walk-input-box">2.0</div>
+                    </div>
+                    <div className="walk-input">
+                      <small>Selling cost (%)</small>
+                      <div className="walk-input-box">2.5</div>
+                    </div>
+                    <div className="walk-input">
+                      <small>Maintenance (MYR/mo)</small>
+                      <div className="walk-input-box">RM 180</div>
                     </div>
                   </div>
                 </div>
                 <div className="walk-aside">
                   <div className="walk-block">
-                    <h6>IRR range</h6>
+                    <h6>Scenario outputs</h6>
                     <div className="walk-kpis">
-                      <div className="walk-kpi pos"><small>IRR low</small><b><CountVal to={3.4} decimals={1} prefix="+" suffix="%" trigger={tab} /></b></div>
-                      <div className="walk-kpi pos"><small>IRR high</small><b><CountVal to={14.8} decimals={1} prefix="+" suffix="%" trigger={tab} /></b></div>
-                    </div>
-                    <div className="walk-dist">
-                      <div className="walk-dist-track" />
-                      <div
-                        className="walk-dist-fill"
-                        style={{ left: tab === "sens" ? "18%" : "50%", right: tab === "sens" ? "18%" : "50%" }}
-                      />
-                      <div className="walk-dist-mark" style={{ left: tab === "sens" ? "18%" : "50%" }}><span>Low</span></div>
-                      <div className="walk-dist-mark" style={{ left: tab === "sens" ? "82%" : "50%" }}><span>High</span></div>
+                      <div className="walk-kpi">
+                        <small>Payback period</small>
+                        <b><CountVal to={12.4} decimals={1} trigger={tab} /> – <CountVal to={19.2} decimals={1} trigger={tab} /> yrs</b>
+                      </div>
+                      <div className="walk-kpi">
+                        <small>Rental Breakeven</small>
+                        <b>RM <CountVal to={2180} trigger={tab} /></b>
+                      </div>
+                      <div className="walk-kpi pos">
+                        <small>Annual CoC</small>
+                        <b><CountVal to={3.2} decimals={1} prefix="+" suffix="%" trigger={tab} /> – <CountVal to={5.4} decimals={1} prefix="+" suffix="%" trigger={tab} /></b>
+                      </div>
+                      <div className="walk-kpi pos">
+                        <small>IRR</small>
+                        <b><CountVal to={6.8} decimals={1} prefix="+" suffix="%" trigger={tab} /> – <CountVal to={12.4} decimals={1} prefix="+" suffix="%" trigger={tab} /></b>
+                      </div>
                     </div>
                   </div>
                   <div className="walk-note">
-                    Even at <b>−10% rent</b> and <b>+1% rates</b>, this deal stays cashflow-positive.
+                    Outputs show the range across your <b>rent low/high</b>. Even at the
+                    low end, this deal stays cash-flow positive.
                   </div>
                 </div>
               </div>

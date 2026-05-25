@@ -7,7 +7,6 @@ import Metrics from "./components/Metrics";
 import Testimonials from "./components/Testimonials";
 import Pricing from "./components/Pricing";
 import FAQ from "./components/FAQ";
-import Waitlist from "./components/Waitlist";
 import Footer from "./components/Footer";
 
 const SHOW_TRUST_STRIP = false;
@@ -26,7 +25,6 @@ function App() {
       {SHOW_TESTIMONIALS && <Testimonials />}
       <Pricing />
       <FAQ />
-      <Waitlist />
       <Footer />
     </div>
   );

@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import "./footer.css";
 
 const Footer = () => {
@@ -12,17 +13,17 @@ const Footer = () => {
         <div className="footer-col">
           <h6>Product</h6>
           <ul>
-            <li><a href="#features">Why Ruma</a></li>
-            <li><a href="#walkthrough">Preview</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="/#features">Why Ruma</a></li>
+            <li><a href="/#walkthrough">Preview</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
+            <li><a href="/#faq">FAQ</a></li>
           </ul>
         </div>
         <div className="footer-col">
           <h6>Company</h6>
           <ul>
             <li><a href="mailto:inbox@ajile.team">Contact</a></li>
-            <li><a href="#waitlist">Waitlist</a></li>
+            <li><Link to="/waitlist">Waitlist</Link></li>
             <li><a href="#">Roadmap</a></li>
             <li><a href="#">Changelog</a></li>
           </ul>

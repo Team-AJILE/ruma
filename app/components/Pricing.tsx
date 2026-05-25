@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { useReveal } from "../hooks";
 import { pricingTiers } from "../data";
 import "./pricing.css";
@@ -24,7 +25,7 @@ const Pricing = () => {
             <ul className="tier-features">
               {t.features.map((f) => <li key={f}>{f}</li>)}
             </ul>
-            <a href="#waitlist" className="r-btn">{t.cta} <span className="r-arrow">↗</span></a>
+            <Link to="/waitlist" className="r-btn">{t.cta} <span className="r-arrow">↗</span></Link>
           </article>
         ))}
       </div>

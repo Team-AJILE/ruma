@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { navLinks } from "../data";
-import logo from "../assets/logo.png";
+import { Link } from "react-router";
+import TopNav from "./TopNav";
 import "./hero.css";
 
 interface HeroPropCard {
@@ -145,64 +145,6 @@ const HeroMock = () => {
 
 const heroPills = ["Scenario Lab", "Auction Lab", "Loan calculator"];
 
-const TopNav = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  const closeMenu = () => setMenuOpen(false);
-  return (
-    <nav
-      className="hero-nav"
-      data-scrolled={scrolled || undefined}
-      data-menu-open={menuOpen || undefined}
-    >
-      <div className="hero-nav-inner r-container">
-        <a href="#" className="hero-logo" aria-label="Ruma" onClick={closeMenu}>
-          <img src={logo} alt="Ruma" className="hero-logo-img" />
-        </a>
-        <div className="hero-nav-links">
-          {navLinks.map((l) => (
-            <a key={l.label} href={l.href}>{l.label}</a>
-          ))}
-        </div>
-        <a href="#waitlist" className="hero-nav-cta" onClick={closeMenu}>
-          Get early access →
-        </a>
-        <button
-          type="button"
-          className="hero-nav-toggle"
-          onClick={() => setMenuOpen((o) => !o)}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-        >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-            {menuOpen ? (
-              <path d="M6 6l12 12M6 18L18 6" />
-            ) : (
-              <path d="M3 6h18M3 12h18M3 18h18" />
-            )}
-          </svg>
-        </button>
-      </div>
-      {menuOpen && (
-        <div className="hero-nav-mobile">
-          {navLinks.map((l) => (
-            <a key={l.label} href={l.href} onClick={closeMenu}>{l.label}</a>
-          ))}
-          <a href="#waitlist" className="hero-nav-mobile-cta" onClick={closeMenu}>
-            Get early access →
-          </a>
-        </div>
-      )}
-    </nav>
-  );
-};
-
 const Hero = () => {
   return (
     <>
@@ -222,9 +164,9 @@ const Hero = () => {
             that wins on yield & KPIs — without spreadsheets.
           </p>
           <div className="hero-actions">
-            <a href="#waitlist" className="r-btn r-btn-primary">
+            <Link to="/waitlist" className="r-btn r-btn-primary">
               Join the waitlist <span className="r-arrow">↗</span>
-            </a>
+            </Link>
             <a href="#walkthrough" className="r-btn r-btn-secondary">
               See a preview
             </a>
