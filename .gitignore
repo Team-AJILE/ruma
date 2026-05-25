@@ -13,6 +13,7 @@ dist-ssr
 build
 .react-router
 *.local
+*.local.json
 
 # Editor directories and files
 .vscode/*
