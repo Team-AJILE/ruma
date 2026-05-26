@@ -28,16 +28,7 @@ const CheckIcon = () => (
   </svg>
 );
 
-const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/94d410be891f40e862285bd00df4f8a6";
-
-const AUTORESPONSE_BODY = `Hi,
-
-Thanks for joining the Ruma waitlist. We'll reach out as we open invite waves, so keep an eye on your inbox.
-
-If you'd like to share more about the deals you're evaluating, just reply to this email.
-
-The Ruma team
-AJILE Studios`;
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/inbox@ajile.team";
 
 export default function WaitlistPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -50,7 +41,12 @@ export default function WaitlistPage() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const payload = Object.fromEntries(formData.entries());
+    const payload = Object.fromEntries(formData.entries()) as Record<string, string>;
+
+    const name = (payload.name || "").toString().trim();
+    payload._subject = name
+      ? `New Ruma waitlist signup — ${name}`
+      : "New Ruma waitlist signup";
 
     setSubmitting(true);
     setError(null);
@@ -112,10 +108,8 @@ export default function WaitlistPage() {
               </p>
             </div>
 
-            <form className="wf-form" onSubmit={handleSubmit} noValidate>
-              <input type="hidden" name="_subject" value="New Ruma waitlist signup" />
+            <form className="wf-form" onSubmit={handleSubmit}>
               <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_autoresponse" value={AUTORESPONSE_BODY} />
               <input
                 type="text"
                 name="_honey"
@@ -189,14 +183,16 @@ export default function WaitlistPage() {
               </div>
 
               <fieldset className="wf-field wf-fieldset">
-                <legend>Would you be open to providing feedback?</legend>
+                <legend>
+                  Would you be open to providing feedback? <span className="wf-req">*</span>
+                </legend>
                 <div className="wf-pills">
                   <label className="wf-pill">
-                    <input type="radio" name="feedbackCall" value="yes" />
+                    <input type="radio" name="feedbackCall" value="yes" required />
                     <span>Yes</span>
                   </label>
                   <label className="wf-pill">
-                    <input type="radio" name="feedbackCall" value="no" />
+                    <input type="radio" name="feedbackCall" value="no" required />
                     <span>No thanks</span>
                   </label>
                 </div>
