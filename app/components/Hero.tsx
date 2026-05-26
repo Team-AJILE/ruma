@@ -160,8 +160,8 @@ const Hero = () => {
             Compare, calculate, and <em>close smarter.</em>
           </h1>
           <p className="hero-sub">
-            Estimate fees, stack loan offers, forecast returns, and choose the property
-            that wins on yield & KPIs — without spreadsheets.
+            Estimate fees, forecast returns, and choose the property
+            that wins on yield & KPIs — without spreadsheets. Built for Malaysian investors, and real estate agents.
           </p>
           <div className="hero-actions">
             <Link to="/waitlist" className="r-btn r-btn-primary">

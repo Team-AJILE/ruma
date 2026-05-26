@@ -51,7 +51,7 @@ export const meta: MetaFunction = () => [
   {
     property: "og:description",
     content:
-      "Estimate fees, stack loan offers, forecast returns, and choose the property that wins on yield & KPIs — without spreadsheets.",
+      "Estimate fees, forecast returns, and choose the property that wins on yield & KPIs — without spreadsheets. Built for Malaysian investors, and real estate agents.",
   },
   // Twitter Card
   { name: "twitter:card", content: "summary" },
@@ -59,7 +59,7 @@ export const meta: MetaFunction = () => [
   {
     name: "twitter:description",
     content:
-      "Estimate fees, stack loan offers, forecast returns, and choose the property that wins on yield & KPIs — without spreadsheets.",
+      "Estimate fees, forecast returns, and choose the property that wins on yield & KPIs — without spreadsheets. Built for Malaysian investors, and real estate agents.",
   },
 ];
 

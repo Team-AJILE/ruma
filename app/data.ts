@@ -41,33 +41,33 @@ export interface NavLink {
 
 export const reasons: Reason[] = [
   {
-    title: "All-in-one evaluator",
-    desc: "Price every cost, compare deals, and size your loan in a single, opinionated workflow.",
+    title: "Full-cost calculator",
+    desc: "Price stamp duty, MOT, legal, and loan costs in one workflow.",
     icon: "box",
   },
   {
     title: "Scenario Lab",
-    desc: "Stress-test rent, vacancy, growth, and rates — and see what your downside really looks like.",
+    desc: "Stress-test rent, vacancy, growth, and rates to see how your cashflow holds up.",
     icon: "sensitivity",
   },
   {
     title: "Side-by-side comparison",
-    desc: "Stack properties by yield, IRR, and other KPIs so the best value reveals itself.",
+    desc: "Rank properties by yield, IRR, and cashflow so the strongest deal stands out.",
     icon: "compare",
   },
   {
     title: "Loan calculator",
-    desc: "Estimate monthly payments and total interest before you commit.",
+    desc: "Estimate monthly repayments and total interest before you commit.",
     icon: "calculator",
   },
   {
     title: "Auction Lab",
-    desc: "Plan auction bids with IRR and cash-on-cash ceilings, market-value deltas, and full cost breakdowns.",
+    desc: "Plan auction bids with IRR and cash-on-cash ceilings, plus a full cost breakdown against market value.",
     icon: "auction",
   },
   {
     title: "Shareable PDF reports",
-    desc: "Export branded, share-ready summaries for clients and co-investors in a click.",
+    desc: "Export branded summaries to share with clients and co-investors.",
     icon: "pdf",
   },
 ];
@@ -75,18 +75,18 @@ export const reasons: Reason[] = [
 export const steps: Step[] = [
   {
     n: "01",
-    title: "Drop in a property",
-    desc: "Fill in price, location, and target rent. Ruma fetches sensible defaults for stamp duty, fees, and indicative rates.",
+    title: "Add a property",
+    desc: "Enter price, location, and target rent. Ruma pre-fills stamp duty and legal fees.",
   },
   {
     n: "02",
-    title: "Tune your assumptions",
-    desc: "Adjust rent, vacancy, growth, and loan mix with sliders. Every panel — cashflow, IRR, repayment — updates live.",
+    title: "Set your assumptions",
+    desc: "Adjust rent, vacancy, growth, and other assumptions. Cashflow, IRR, and repayment numbers update as you go.",
   },
   {
     n: "03",
     title: "Compare and decide",
-    desc: "Save scenarios, stack properties side-by-side, and export a share-ready summary for clients or co-investors.",
+    desc: "Save scenarios, compare properties side by side, and export a branded PDF for clients or co-investors.",
   },
 ];
 
@@ -137,7 +137,7 @@ export const pricingTiers: PricingTier[] = [
       "Scenario Lab — build and export scenarios",
       "Auction Lab — bid analysis with PDF export",
       "Import from Listing — auto-fill from text or screenshots",
-      "Early access to new calculators",
+      "Early access to new features",
     ],
     cta: "Join the waitlist",
     primary: true,

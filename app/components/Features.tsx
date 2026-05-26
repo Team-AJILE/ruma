@@ -100,14 +100,13 @@ const Features = () => {
         <div>
           <span className="r-eyebrow">Why Ruma</span>
           <h2 className="features-title" style={{ marginTop: "1rem" }}>
-            Modern deal intelligence
-            <em>without the spreadsheet sprawl.</em>
+            All your deal math in one place.
+            <em>Without the spreadsheet sprawl.</em>
           </h2>
         </div>
         <p className="features-lede">
-          Ruma pulls every lever — fees, yields, loan costs, scenarios, auction bids — into
-          a single workflow so you can vet a property, compare scenarios, and move toward
-          closing with confidence.
+          Ruma brings stamp duty, legal fees, yields, loan costs, and auction bids into one
+          workflow. Vet a property, compare scenarios, and reach a decision faster.
         </p>
       </div>
 

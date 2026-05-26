@@ -9,7 +9,7 @@ const HowItWorks = () => {
       <div className="r-container">
         <div className="hiw-head">
           <span className="r-eyebrow">How it works</span>
-          <h2>Three steps from <em>listing to decision.</em></h2>
+          <h2>From listing to decision in <em>three steps.</em></h2>
         </div>
         <div className="hiw-grid">
           {steps.map((s) => (

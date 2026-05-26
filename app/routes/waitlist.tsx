@@ -10,7 +10,7 @@ export const meta: MetaFunction = () => [
   {
     name: "description",
     content:
-      "Help us prioritize early invites. Tell us a bit about you and how you'd use Ruma.",
+      "Help us prioritize early invites. Sign up for early access to Ruma.",
   },
   { name: "robots", content: "noindex, follow" },
 ];
@@ -28,14 +28,57 @@ const CheckIcon = () => (
   </svg>
 );
 
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/94d410be891f40e862285bd00df4f8a6";
+
+const AUTORESPONSE_BODY = `Hi,
+
+Thanks for joining the Ruma waitlist. We'll reach out as we open invite waves, so keep an eye on your inbox.
+
+If you'd like to share more about the deals you're evaluating, just reply to this email.
+
+The Ruma team
+AJILE Studios`;
+
 export default function WaitlistPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    if (typeof window !== "undefined") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    if (submitting) return;
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    setSubmitting(true);
+    setError(null);
+
+    try {
+      const res = await fetch(FORMSUBMIT_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = (await res.json().catch(() => ({}))) as { success?: string | boolean };
+      const ok = res.ok && (data.success === true || data.success === "true");
+      if (!ok) {
+        throw new Error("Submission failed");
+      }
+
+      setSubmitted(true);
+      if (typeof window !== "undefined") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    } catch {
+      setError("Something went wrong. Please try again, or email inbox@ajile.team.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -51,7 +94,7 @@ export default function WaitlistPage() {
             </div>
             <h1>You're on the list.</h1>
             <p>
-              Thanks for sharing the details. We'll reach out as we open invite waves —
+              Thanks for signing up. We'll reach out as we open invite waves —
               keep an eye on your inbox.
             </p>
             <Link to="/" className="wf-success-back">
@@ -62,7 +105,7 @@ export default function WaitlistPage() {
           <>
             <div className="wf-intro">
               <span className="r-eyebrow">Waitlist</span>
-              <h1>Tell us a bit about you.</h1>
+              <h1>Sign up for early access.</h1>
               <p>
                 Help us prioritize early invites and tailor the first run of Ruma to
                 what you actually need.
@@ -70,6 +113,18 @@ export default function WaitlistPage() {
             </div>
 
             <form className="wf-form" onSubmit={handleSubmit} noValidate>
+              <input type="hidden" name="_subject" value="New Ruma waitlist signup" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_autoresponse" value={AUTORESPONSE_BODY} />
+              <input
+                type="text"
+                name="_honey"
+                tabIndex={-1}
+                autoComplete="off"
+                style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+                aria-hidden="true"
+              />
+
               <div className="wf-row">
                 <div className="wf-field">
                   <label htmlFor="wf-name">
@@ -134,15 +189,11 @@ export default function WaitlistPage() {
               </div>
 
               <fieldset className="wf-field wf-fieldset">
-                <legend>Would you be open to a quick feedback call?</legend>
+                <legend>Would you be open to providing feedback?</legend>
                 <div className="wf-pills">
                   <label className="wf-pill">
                     <input type="radio" name="feedbackCall" value="yes" />
                     <span>Yes</span>
-                  </label>
-                  <label className="wf-pill">
-                    <input type="radio" name="feedbackCall" value="maybe" />
-                    <span>Maybe</span>
                   </label>
                   <label className="wf-pill">
                     <input type="radio" name="feedbackCall" value="no" />
@@ -152,9 +203,14 @@ export default function WaitlistPage() {
               </fieldset>
 
               <div className="wf-actions">
-                <button type="submit" className="wf-submit">
-                  Join the waitlist <ArrowIcon />
+                <button type="submit" className="wf-submit" disabled={submitting}>
+                  {submitting ? "Submitting…" : (<>Join the waitlist <ArrowIcon /></>)}
                 </button>
+                {error && (
+                  <p className="wf-fineprint" role="alert" style={{ color: "#b42318" }}>
+                    {error}
+                  </p>
+                )}
                 <p className="wf-fineprint">
                   We'll only use this to send you product updates and invites. No spam.
                 </p>
