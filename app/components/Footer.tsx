@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="footer-grid">
         <div className="footer-brand">
           <h4>Ruma</h4>
-          <p>Compare, calculate, and close smarter. Built by AJILE STUDIO.</p>
+          <p>Compare, calculate, and close smarter. Built by <a href="https://ajile.team" target="_blank" rel="noopener noreferrer">AJILE STUDIO</a>.</p>
         </div>
         <div className="footer-col">
           <h6>Product</h6>
@@ -39,7 +39,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-credit">
-        <span>© {year} AJILE STUDIO (Reg. No. 202503327530)</span>
+        <span>© {year} <a href="https://ajile.team" target="_blank" rel="noopener noreferrer">AJILE STUDIO</a> (Reg. No. 202503327530)</span>
       </div>
     </footer>
   );

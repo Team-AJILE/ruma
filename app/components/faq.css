@@ -66,3 +66,4 @@
   padding-top: 0.6rem;
 }
 .faq-a p { color: var(--ink-2); font-size: 0.97rem; max-width: 60ch; }
+.faq-a a { color: var(--primary-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }

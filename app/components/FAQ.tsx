@@ -3,6 +3,19 @@ import { useReveal } from "../hooks";
 import { faqs } from "../data";
 import "./faq.css";
 
+const renderAnswer = (a: string) => {
+  const marker = "AJILE Studios";
+  const idx = a.indexOf(marker);
+  if (idx === -1) return a;
+  return (
+    <>
+      {a.slice(0, idx)}
+      <a href="https://ajile.team" target="_blank" rel="noopener noreferrer">{marker}</a>
+      {a.slice(idx + marker.length)}
+    </>
+  );
+};
+
 const FAQ = () => {
   const ref = useReveal<HTMLElement>();
   const [open, setOpen] = useState<number>(0);
@@ -21,7 +34,7 @@ const FAQ = () => {
                 <span>{f.q}</span>
                 <span className="ico">+</span>
               </button>
-              <div className="faq-a"><p>{f.a}</p></div>
+              <div className="faq-a"><p>{renderAnswer(f.a)}</p></div>
             </div>
           ))}
         </div>
